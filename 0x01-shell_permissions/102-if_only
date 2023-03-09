@@ -1,8 +1,3 @@
 #!/bin/bash
 
-# Check if the file is owned by guillaume
-if [ $(stat -c '%U' hello) == "guillaume" ]; then
-  # Change owner to betty
-  chown betty hello
-fi
-
+[ $(stat -c '%U' hello) == "guillaume" ] && chown betty hello
